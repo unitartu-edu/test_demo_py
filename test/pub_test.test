@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="test_demo_py" type="counter.py" name="test_node"/>
+
+  <test test-name="advertisetest_test" pkg="rostest" type="advertisetest" time-limit="5.0" retry="3">
+    <rosparam>
+      topics:
+      - name: /counter_value
+        timeout: 2.
+    </rosparam>
+  </test>
+</launch>
+
